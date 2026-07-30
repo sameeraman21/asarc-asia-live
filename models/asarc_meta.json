@@ -41,7 +41,7 @@
   "entry": "next M1 open after M5 close",
   "label_horizon_min": 120,
   "max_trade_min": 180,
-  "drift_gate_usd": 0.3,
+  "drift_gate_usd": 1.0,
   "max_spread_usd": 0.35,
   "stride": 2,
   "train": "last 12 months rolling",

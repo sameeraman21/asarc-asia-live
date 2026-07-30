@@ -46,7 +46,7 @@ TP_ATR = 2.0
 THR = 0.55
 COST_FLOOR = 0.30
 MAX_SPREAD_USD = 0.35
-DRIFT_GATE_USD = 0.30
+DRIFT_GATE_USD = 1.0
 MAX_TRADE_MIN = 180
 ASIA_HOURS = {0, 1, 2, 3, 4, 5, 6}
 RUNNING = True
@@ -60,7 +60,7 @@ def _load_meta() -> dict:
     THR = float(meta.get("thr_asia", 0.55))
     COST_FLOOR = float(meta.get("cost", 0.30))
     MAX_SPREAD_USD = float(meta.get("max_spread_usd", 0.35))
-    DRIFT_GATE_USD = float(meta.get("drift_gate_usd", 0.30))
+    DRIFT_GATE_USD = float(meta.get("drift_gate_usd", 1.0))
     hrs = meta.get("asia_hours_utc", list(ASIA_HOURS))
     ASIA_HOURS = set(int(h) for h in hrs)
     return meta
@@ -316,7 +316,8 @@ def run(mode: str, lot: float, poll: int) -> None:
             if mode == "live":
                 live_entry = float(px["ask"] if direction == "BUY" else px["bid"])
                 if abs(live_entry - lv["entry"]) > DRIFT_GATE_USD:
-                    log(f"LIVE SKIP drift live={live_entry} vs model={lv['entry']}")
+                    log(f"LIVE SKIP drift live={live_entry} vs model={lv['entry']} gate={DRIFT_GATE_USD}")
+                    paper = None  # don't block next signal after skipped live fill
                 else:
                     live_lv = atr_levels(direction, live_entry, atr)
                     result = client.open_market(
