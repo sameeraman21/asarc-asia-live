@@ -1,0 +1,17 @@
+{
+  "provider": "metaapi",
+  "account_id": "YOUR_METAAPI_ACCOUNT_ID",
+  "login": "YOUR_MT5_LOGIN",
+  "broker": "Exness-MT5Trial15",
+  "platform": "mt5",
+  "region": "london",
+  "token": "YOUR_METAAPI_TOKEN",
+  "symbol_candidates": [
+    "XAUUSD",
+    "XAUUSDm",
+    "XAUUSD.m",
+    "GOLD"
+  ],
+  "resolved_symbol": "XAUUSDm",
+  "note": "Copy real credentials locally. Never commit real token."
+}

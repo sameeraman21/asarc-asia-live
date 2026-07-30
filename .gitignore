@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+config/metaapi.json
+bot.pid
+logs/
+decisions/
+outcomes/
+logs_asarc/
+decisions_asarc/
+outcomes_asarc/
+*.log
+.DS_Store

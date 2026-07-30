@@ -1,0 +1,207 @@
+{
+  "strategy": "ASARC_B_ABSOLUTE_BEST",
+  "trained_at": "2026-07-29T15:48:42.755355+00:00",
+  "features": [
+    "rsi_14",
+    "atr_pct",
+    "trend_score",
+    "body_size",
+    "upper_wick",
+    "lower_wick",
+    "dist_mid_atr",
+    "stretch",
+    "ema20_slope",
+    "hour",
+    "session_code",
+    "h1_bias",
+    "vol_code",
+    "dist_high_atr",
+    "dist_low_atr",
+    "body_atr",
+    "wick_imbalance"
+  ],
+  "feature_source": "live/features.py add_features (rich pack, prod parity)",
+  "feat_pack": "rich",
+  "sl_atr": 3.0,
+  "tp_atr": 2.0,
+  "cost": 0.3,
+  "thr_asia": 0.55,
+  "sessions": [
+    "asia"
+  ],
+  "asia_hours_utc": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "entry": "next M1 open after M5 close",
+  "label_horizon_min": 120,
+  "max_trade_min": 180,
+  "drift_gate_usd": 0.3,
+  "max_spread_usd": 0.35,
+  "stride": 2,
+  "train": "last 12 months rolling",
+  "train_span": {
+    "t0": "2025-07-29 00:55:00+00:00",
+    "t1": "2026-07-29 00:55:00+00:00",
+    "n": 30610
+  },
+  "classifier": "HistGradientBoostingClassifier",
+  "model": "std",
+  "july_oos_prejuly_train": {
+    "n": 133,
+    "wr": 83.46,
+    "tpd": 4.59,
+    "net_usd": 771.36,
+    "total_r": 72.3,
+    "pf": 4.479,
+    "max_dd_usd": 22.09,
+    "avg_win": 8.95,
+    "avg_loss": -10.08,
+    "span_days": 29,
+    "n_asia": 133,
+    "wr_asia": 83.5,
+    "net_asia": 771.36
+  },
+  "wf_hybrid": {
+    "n": 2462,
+    "wr": 82.37,
+    "tpd": 5.08,
+    "net_usd": 13029.57,
+    "total_r": 1261.02,
+    "pf": 3.285,
+    "max_dd_usd": 227.89,
+    "avg_win": 9.24,
+    "avg_loss": -13.14,
+    "span_days": 485,
+    "n_asia": 2086,
+    "wr_asia": 86.0,
+    "net_asia": 12564.95,
+    "n_london": 151,
+    "wr_london": 66.2,
+    "net_london": 551.95,
+    "n_overlap": 31,
+    "wr_overlap": 48.4,
+    "net_overlap": -145.88,
+    "n_newyork": 194,
+    "wr_newyork": 60.8,
+    "net_newyork": 58.55
+  },
+  "wf_prod_policy": {
+    "n": 2219,
+    "wr": 84.14,
+    "tpd": 4.58,
+    "net_usd": 12365.74,
+    "total_r": 1185.57,
+    "pf": 3.814,
+    "max_dd_usd": 196.55,
+    "avg_win": 8.98,
+    "avg_loss": -12.49,
+    "span_days": 485,
+    "n_asia": 2219,
+    "wr_asia": 84.1,
+    "net_asia": 12365.74
+  },
+  "feature_parity": {
+    "ok": 0,
+    "n_common": 105145,
+    "n_sample": 2000,
+    "per_feature": {
+      "rsi_14": {
+        "status": "ok",
+        "mae": 0.000273,
+        "corr": 1.0
+      },
+      "atr_pct": {
+        "status": "ok",
+        "mae": 0.0,
+        "corr": 1.0
+      },
+      "trend_score": {
+        "status": "ok",
+        "mae": 0.0035,
+        "corr": 0.9997
+      },
+      "body_size": {
+        "status": "ok",
+        "mae": 0.0,
+        "corr": 1.0
+      },
+      "upper_wick": {
+        "status": "ok",
+        "mae": 0.0,
+        "corr": 1.0
+      },
+      "lower_wick": {
+        "status": "ok",
+        "mae": 0.0,
+        "corr": 1.0
+      },
+      "dist_mid_atr": {
+        "status": "ok",
+        "mae": 2.6e-05,
+        "corr": 1.0
+      },
+      "stretch": {
+        "status": "ok",
+        "mae": 2.6e-05,
+        "corr": 1.0
+      },
+      "ema20_slope": {
+        "status": "ok",
+        "mae": 0.0,
+        "corr": 1.0
+      },
+      "hour": {
+        "status": "ok",
+        "mae": 0.0,
+        "corr": 1.0
+      },
+      "session_code": {
+        "status": "ok",
+        "mae": 0.0,
+        "corr": 1.0
+      },
+      "h1_bias": {
+        "status": "ok",
+        "mae": 0.054,
+        "corr": 0.6841
+      },
+      "vol_code": {
+        "status": "ok",
+        "mae": 0.0,
+        "corr": 1.0
+      },
+      "dist_high_atr": {
+        "status": "missing",
+        "in_live": 1,
+        "in_research": 0
+      },
+      "dist_low_atr": {
+        "status": "missing",
+        "in_live": 1,
+        "in_research": 0
+      },
+      "body_atr": {
+        "status": "missing",
+        "in_live": 1,
+        "in_research": 0
+      },
+      "wick_imbalance": {
+        "status": "missing",
+        "in_live": 1,
+        "in_research": 0
+      }
+    }
+  },
+  "hist_1y_ref": {
+    "path": "data/output/research/asarc_b_july_loop/absolute_best_1y_summary.json",
+    "last12_net": 10883.23,
+    "full_span_net": 12671.85,
+    "wr": 84.82
+  }
+}
